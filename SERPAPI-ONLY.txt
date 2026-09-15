@@ -1,0 +1,9 @@
+SERPAPI-ONLY BUILD
+
+The only search provider in this package is SerpApi.
+The supplied SerpApi key is stored in app/config.php and is never sent to browser JavaScript.
+
+After upload:
+1. /api/index.php?a=health
+2. /api/index.php?a=session
+3. Run a live check on the public page.

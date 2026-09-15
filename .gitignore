@@ -1,0 +1,18 @@
+# Private configuration
+app/config.php
+
+# Local database and generated data
+app/data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db

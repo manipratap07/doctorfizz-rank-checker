@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Keyword Rank Checker | Check Google Position Fast</title>
+<meta name="description" content="Check where your domain ranks for any keyword across 239 countries. See your exact position, every result above you, and what to do next. Free, no signup.">
+<link rel="canonical" href="https://itzfizz.com/keyword-rank-checker">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0D0D0D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Itzfizz Digital">
+<meta property="og:title" content="Free Keyword Rank Checker | Check Google Position Fast">
+<meta property="og:description" content="Check where your domain ranks for any keyword across 239 countries. See your exact position, every result above you, and what to do next. Free, no signup.">
+<meta property="og:url" content="https://itzfizz.com/keyword-rank-checker">
+<meta property="og:image" content="https://itzfizz.com/keyword-rank-checker/assets/img/doctorfizz-black.png">
+<meta property="og:image:alt" content="DoctorFizz free keyword rank checker">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/doctorfizz-black.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/app.r12.css?v=r12-serpapi">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"DoctorFizz Keyword Rank Checker","url":"https://itzfizz.com/keyword-rank-checker","description":"Check where your domain ranks for any keyword across 239 countries. See your exact position, every result above you, and what to do next. Free, no signup.","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"featureList":"Organic position for any keyword, 239 countries, 82 languages, full list of competing results, action guidance per position band","publisher":{"@type":"Organization","name":"Itzfizz Digital","url":"https://itzfizz.com","logo":"https://itzfizz.com/keyword-rank-checker/assets/img/itzfizz-black.png","address":{"@type":"PostalAddress","addressLocality":"Bengaluru","addressCountry":"IN"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this rank checker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No signup, no email, no card. Every visitor gets five checks a day, and repeat checks of the same keyword and domain come from cache without using the allowance."}},{"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"It returns a neutral, unpersonalised position from a Google search index for the country and language you choose. Run the same check twice and you get the same answer, which is what makes it usable as a baseline you can track."}},{"@type":"Question","name":"Why might it differ from what I see in Google?","acceptedAnswer":{"@type":"Answer","text":"Your own results are shaped by your location, search history and signed in account, and by AI Overviews, map packs and ads pushing organic results down the visible page. The checker has no history, so it reports the underlying organic position."}},{"@type":"Question","name":"Does it check subdomains?","acceptedAnswer":{"@type":"Answer","text":"Yes. It matches on hostname, so blog.yoursite.com counts as a match for yoursite.com, and it reports the exact URL that ranked."}},{"@type":"Question","name":"Can I check other countries?","acceptedAnswer":{"@type":"Answer","text":"Yes, 239 countries and 82 interface languages. This matters most when you sell into a market you are not based in, because the local result set is the only one that counts."}},{"@type":"Question","name":"How deep does it scan?","acceptedAnswer":{"@type":"Answer","text":"Up to the first 50 organic results, your choice of 10, 20, 30 or 50. The scan stops as soon as it finds your domain."}},{"@type":"Question","name":"How often should I check?","acceptedAnswer":{"@type":"Answer","text":"Weekly suits most sites, monthly in slow moving industries. Pick a fixed day and compare like with like, because daily checking mostly measures normal fluctuation."}},{"@type":"Question","name":"Does ranking first still mean getting the clicks?","acceptedAnswer":{"@type":"Answer","text":"Less than it did. Ahrefs measured a 58 percent lower click through rate for the top ranking page when an AI Overview is present. Position one is still the best place to be, it simply earns fewer visits than it did two years ago."}},{"@type":"Question","name":"Can I use this for client reporting?","acceptedAnswer":{"@type":"Answer","text":"Yes, as a baseline, as long as you state where the number came from. It is an index position rather than a client specific personalised result."}},{"@type":"Question","name":"Do you store my keyword or domain?","acceptedAnswer":{"@type":"Answer","text":"The keyword, domain and country are stored so repeat checks can be cached. Your IP address is never stored. A one way keyed hash is used only to count your daily allowance."}}]},{"@type":"HowTo","name":"How to check where your page ranks for a keyword","totalTime":"PT1M","step":[{"@type":"HowToStep","position":1,"name":"Type the keyword","text":"Use the phrase a customer would actually search, not your product name."},{"@type":"HowToStep","position":2,"name":"Add your domain","text":"Just the domain. Subdomains count, so blog.yoursite.com matches yoursite.com."},{"@type":"HowToStep","position":3,"name":"Pick the market","text":"239 countries and 82 interface languages. The search runs from there, not from where you are sitting."},{"@type":"HowToStep","position":4,"name":"Read the gap","text":"Position, competing results, and the action for your band, in one screen."}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#keyword">Skip to the rank checker</a>
+<div class="progress" id="progress" aria-hidden="true"><i></i></div>
+
+<header class="nav" id="nav">
+  <div class="shell nav-in">
+    <a class="brand" href="./" aria-label="DoctorFizz rank checker, home">
+      <img src="assets/img/doctorfizz-white.png" alt="DoctorFizz" width="180" height="31" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#does">What it does</a>
+      <a href="#how">How it works</a>
+      <a href="#bands">Position bands</a>
+      <a href="#ai">AI Overviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="pill-cta" href="#keyword"><span>Check a keyword</span></a>
+  </div>
+</header>
+
+<div class="rerun" id="rerun" hidden>
+  <div class="shell rerun-in">
+    <p class="rerun-txt"><b id="rerun-pos">&nbsp;</b><span id="rerun-meta"></span></p>
+    <button type="button" class="btn btn-sm" id="rerun-btn">New check</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================================================ hero -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="shell hero-in">
+    <div class="hero-copy">
+      <p class="kicker" data-kicker><span class="dot" aria-hidden="true"></span>Free rank checker</p>
+      <h1 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">WHERE</span></span> <span class="wd"><span class="ink">DO</span></span> <span class="wd"><span class="ink">YOU</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">ACTUALLY</span></span> <span class="wd"><span class="ink" data-grad="1">RANK?</span></span></span></h1>      <p class="deck" data-deck>One keyword. One domain. Ten seconds. You get your exact organic position, every page ranking above you, and the single move worth making next.</p>
+
+      <dl class="facts" data-facts>
+        <div><dt>Checks a day</dt><dd data-count="5">0</dd></div>
+        <div><dt>Countries</dt><dd data-count="239">0</dd></div>
+        <div><dt>Results deep</dt><dd data-count="50">0</dd></div>
+        <div><dt>Signup fields</dt><dd data-count="0">0</dd></div>
+      </dl>
+    </div>
+
+    <div class="tool" id="tool-card">
+      <div class="tool-top">
+        <h2 class="tool-title">Check a keyword</h2>
+        <p class="meter" id="meter" data-state="idle">
+          <span class="meter-dot" aria-hidden="true"></span>
+          <span id="meter-text">Loading your allowance</span>
+        </p>
+      </div>
+
+      <div id="notice" class="notice" hidden></div>
+
+      <form id="rank-form" class="form" novalidate autocomplete="off">
+        <div class="hp" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="fld fld-lg">
+          <label for="keyword">Keyword</label>
+          <input type="text" id="keyword" name="keyword" maxlength="120" required
+                 placeholder="outsourced accounting services" spellcheck="false" enterkeyhint="go">
+        </div>
+
+        <div class="fld fld-lg">
+          <label for="domain">Your domain</label>
+          <input type="text" id="domain" name="domain" maxlength="253" required
+                 placeholder="itzfizz.com" spellcheck="false" inputmode="url" enterkeyhint="go">
+        </div>
+
+        <div class="fld">
+          <label for="gl-search">Country</label>
+          <input list="gl-list" id="gl-search" placeholder="Type to search" autocomplete="off" spellcheck="false">
+          <datalist id="gl-list">
+            <option value="Afghanistan"></option><option value="Albania"></option><option value="Algeria"></option><option value="American Samoa"></option><option value="Andorra"></option><option value="Angola"></option><option value="Anguilla"></option><option value="Antarctica"></option><option value="Antigua and Barbuda"></option><option value="Argentina"></option><option value="Armenia"></option><option value="Aruba"></option><option value="Australia"></option><option value="Austria"></option><option value="Azerbaijan"></option><option value="Bahamas"></option><option value="Bahrain"></option><option value="Bangladesh"></option><option value="Barbados"></option><option value="Belarus"></option><option value="Belgium"></option><option value="Belize"></option><option value="Benin"></option><option value="Bermuda"></option><option value="Bhutan"></option><option value="Bolivia"></option><option value="Bosnia and Herzegovina"></option><option value="Botswana"></option><option value="Bouvet Island"></option><option value="Brazil"></option><option value="British Indian Ocean Territory"></option><option value="Brunei Darussalam"></option><option value="Bulgaria"></option><option value="Burkina Faso"></option><option value="Burundi"></option><option value="Cambodia"></option><option value="Cameroon"></option><option value="Canada"></option><option value="Cape Verde"></option><option value="Cayman Islands"></option><option value="Central African Republic"></option><option value="Chad"></option><option value="Chile"></option><option value="China"></option><option value="Christmas Island"></option><option value="Cocos (Keeling) Islands"></option><option value="Colombia"></option><option value="Comoros"></option><option value="Congo"></option><option value="Congo, the Democratic Republic of the"></option><option value="Cook Islands"></option><option value="Costa Rica"></option><option value="Cote Divoire"></option><option value="Croatia"></option><option value="Cuba"></option><option value="Cyprus"></option><option value="Czech Republic"></option><option value="Denmark"></option><option value="Djibouti"></option><option value="Dominica"></option><option value="Dominican Republic"></option><option value="Ecuador"></option><option value="Egypt"></option><option value="El Salvador"></option><option value="Equatorial Guinea"></option><option value="Eritrea"></option><option value="Estonia"></option><option value="Ethiopia"></option><option value="Falkland Islands (Malvinas)"></option><option value="Faroe Islands"></option><option value="Fiji"></option><option value="Finland"></option><option value="France"></option><option value="French Guiana"></option><option value="French Polynesia"></option><option value="French Southern Territories"></option><option value="Gabon"></option><option value="Gambia"></option><option value="Georgia"></option><option value="Germany"></option><option value="Ghana"></option><option value="Gibraltar"></option><option value="Greece"></option><option value="Greenland"></option><option value="Grenada"></option><option value="Guadeloupe"></option><option value="Guam"></option><option value="Guatemala"></option><option value="Guinea"></option><option value="Guinea-Bissau"></option><option value="Guyana"></option><option value="Haiti"></option><option value="Heard Island and Mcdonald Islands"></option><option value="Holy See (Vatican City State)"></option><option value="Honduras"></option><option value="Hong Kong"></option><option value="Hungary"></option><option value="Iceland"></option><option value="India"></option><option value="Indonesia"></option><option value="Iran, Islamic Republic of"></option><option value="Iraq"></option><option value="Ireland"></option><option value="Israel"></option><option value="Italy"></option><option value="Jamaica"></option><option value="Japan"></option><option value="Jordan"></option><option value="Kazakhstan"></option><option value="Kenya"></option><option value="Kiribati"></option><option value="Korea, Democratic People Republic of"></option><option value="Korea, Republic of"></option><option value="Kuwait"></option><option value="Kyrgyzstan"></option><option value="Lao People Democratic Republic"></option><option value="Latvia"></option><option value="Lebanon"></option><option value="Lesotho"></option><option value="Liberia"></option><option value="Libyan Arab Jamahiriya"></option><option value="Liechtenstein"></option><option value="Lithuania"></option><option value="Luxembourg"></option><option value="Macao"></option><option value="Macedonia, the Former Yugosalv Republic of"></option><option value="Madagascar"></option><option value="Malawi"></option><option value="Malaysia"></option><option value="Maldives"></option><option value="Mali"></option><option value="Malta"></option><option value="Marshall Islands"></option><option value="Martinique"></option><option value="Mauritania"></option><option value="Mauritius"></option><option value="Mayotte"></option><option value="Mexico"></option><option value="Micronesia, Federated States of"></option><option value="Moldova, Republic of"></option><option value="Monaco"></option><option value="Mongolia"></option><option value="Montserrat"></option><option value="Morocco"></option><option value="Mozambique"></option><option value="Myanmar"></option><option value="Namibia"></option><option value="Nauru"></option><option value="Nepal"></option><option value="Netherlands"></option><option value="Netherlands Antilles"></option><option value="New Caledonia"></option><option value="New Zealand"></option><option value="Nicaragua"></option><option value="Niger"></option><option value="Nigeria"></option><option value="Niue"></option><option value="Norfolk Island"></option><option value="Northern Mariana Islands"></option><option value="Norway"></option><option value="Oman"></option><option value="Pakistan"></option><option value="Palau"></option><option value="Palestinian Territory, Occupied"></option><option value="Panama"></option><option value="Papua New Guinea"></option><option value="Paraguay"></option><option value="Peru"></option><option value="Philippines"></option><option value="Pitcairn"></option><option value="Poland"></option><option value="Portugal"></option><option value="Puerto Rico"></option><option value="Qatar"></option><option value="Reunion"></option><option value="Romania"></option><option value="Russian Federation"></option><option value="Rwanda"></option><option value="Saint Helena"></option><option value="Saint Kitts and Nevis"></option><option value="Saint Lucia"></option><option value="Saint Pierre and Miquelon"></option><option value="Saint Vincent and the Grenadines"></option><option value="Samoa"></option><option value="San Marino"></option><option value="Sao Tome and Principe"></option><option value="Saudi Arabia"></option><option value="Senegal"></option><option value="Serbia and Montenegro"></option><option value="Seychelles"></option><option value="Sierra Leone"></option><option value="Singapore"></option><option value="Slovakia"></option><option value="Slovenia"></option><option value="Solomon Islands"></option><option value="Somalia"></option><option value="South Africa"></option><option value="South Georgia and the South Sandwich Islands"></option><option value="Spain"></option><option value="Sri Lanka"></option><option value="Sudan"></option><option value="Suriname"></option><option value="Svalbard and Jan Mayen"></option><option value="Swaziland"></option><option value="Sweden"></option><option value="Switzerland"></option><option value="Syrian Arab Republic"></option><option value="Taiwan, Province of China"></option><option value="Tajikistan"></option><option value="Tanzania, United Republic of"></option><option value="Thailand"></option><option value="Timor-Leste"></option><option value="Togo"></option><option value="Tokelau"></option><option value="Tonga"></option><option value="Trinidad and Tobago"></option><option value="Tunisia"></option><option value="Turkey"></option><option value="Turkmenistan"></option><option value="Turks and Caicos Islands"></option><option value="Tuvalu"></option><option value="Uganda"></option><option value="Ukraine"></option><option value="United Arab Emirates"></option><option value="United Kingdom"></option><option value="United States"></option><option value="United States Minor Outlying Islands"></option><option value="Uruguay"></option><option value="Uzbekistan"></option><option value="Vanuatu"></option><option value="Venezuela"></option><option value="Viet Nam"></option><option value="Virgin Islands, British"></option><option value="Virgin Islands, U.S."></option><option value="Wallis and Futuna"></option><option value="Western Sahara"></option><option value="Yemen"></option><option value="Zambia"></option><option value="Zimbabwe"></option>          </datalist>
+          <select id="gl" name="gl" class="sr-select" aria-label="Country">
+            <option value="af">Afghanistan</option><option value="al">Albania</option><option value="dz">Algeria</option><option value="as">American Samoa</option><option value="ad">Andorra</option><option value="ao">Angola</option><option value="ai">Anguilla</option><option value="aq">Antarctica</option><option value="ag">Antigua and Barbuda</option><option value="ar">Argentina</option><option value="am">Armenia</option><option value="aw">Aruba</option><option value="au">Australia</option><option value="at">Austria</option><option value="az">Azerbaijan</option><option value="bs">Bahamas</option><option value="bh">Bahrain</option><option value="bd">Bangladesh</option><option value="bb">Barbados</option><option value="by">Belarus</option><option value="be">Belgium</option><option value="bz">Belize</option><option value="bj">Benin</option><option value="bm">Bermuda</option><option value="bt">Bhutan</option><option value="bo">Bolivia</option><option value="ba">Bosnia and Herzegovina</option><option value="bw">Botswana</option><option value="bv">Bouvet Island</option><option value="br">Brazil</option><option value="io">British Indian Ocean Territory</option><option value="bn">Brunei Darussalam</option><option value="bg">Bulgaria</option><option value="bf">Burkina Faso</option><option value="bi">Burundi</option><option value="kh">Cambodia</option><option value="cm">Cameroon</option><option value="ca">Canada</option><option value="cv">Cape Verde</option><option value="ky">Cayman Islands</option><option value="cf">Central African Republic</option><option value="td">Chad</option><option value="cl">Chile</option><option value="cn">China</option><option value="cx">Christmas Island</option><option value="cc">Cocos (Keeling) Islands</option><option value="co">Colombia</option><option value="km">Comoros</option><option value="cg">Congo</option><option value="cd">Congo, the Democratic Republic of the</option><option value="ck">Cook Islands</option><option value="cr">Costa Rica</option><option value="ci">Cote Divoire</option><option value="hr">Croatia</option><option value="cu">Cuba</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="dk">Denmark</option><option value="dj">Djibouti</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="ec">Ecuador</option><option value="eg">Egypt</option><option value="sv">El Salvador</option><option value="gq">Equatorial Guinea</option><option value="er">Eritrea</option><option value="ee">Estonia</option><option value="et">Ethiopia</option><option value="fk">Falkland Islands (Malvinas)</option><option value="fo">Faroe Islands</option><option value="fj">Fiji</option><option value="fi">Finland</option><option value="fr">France</option><option value="gf">French Guiana</option><option value="pf">French Polynesia</option><option value="tf">French Southern Territories</option><option value="ga">Gabon</option><option value="gm">Gambia</option><option value="ge">Georgia</option><option value="de">Germany</option><option value="gh">Ghana</option><option value="gi">Gibraltar</option><option value="gr">Greece</option><option value="gl">Greenland</option><option value="gd">Grenada</option><option value="gp">Guadeloupe</option><option value="gu">Guam</option><option value="gt">Guatemala</option><option value="gn">Guinea</option><option value="gw">Guinea-Bissau</option><option value="gy">Guyana</option><option value="ht">Haiti</option><option value="hm">Heard Island and Mcdonald Islands</option><option value="va">Holy See (Vatican City State)</option><option value="hn">Honduras</option><option value="hk">Hong Kong</option><option value="hu">Hungary</option><option value="is">Iceland</option><option value="in">India</option><option value="id">Indonesia</option><option value="ir">Iran, Islamic Republic of</option><option value="iq">Iraq</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="it">Italy</option><option value="jm">Jamaica</option><option value="jp">Japan</option><option value="jo">Jordan</option><option value="kz">Kazakhstan</option><option value="ke">Kenya</option><option value="ki">Kiribati</option><option value="kp">Korea, Democratic People Republic of</option><option value="kr">Korea, Republic of</option><option value="kw">Kuwait</option><option value="kg">Kyrgyzstan</option><option value="la">Lao People Democratic Republic</option><option value="lv">Latvia</option><option value="lb">Lebanon</option><option value="ls">Lesotho</option><option value="lr">Liberia</option><option value="ly">Libyan Arab Jamahiriya</option><option value="li">Liechtenstein</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option><option value="mo">Macao</option><option value="mk">Macedonia, the Former Yugosalv Republic of</option><option value="mg">Madagascar</option><option value="mw">Malawi</option><option value="my">Malaysia</option><option value="mv">Maldives</option><option value="ml">Mali</option><option value="mt">Malta</option><option value="mh">Marshall Islands</option><option value="mq">Martinique</option><option value="mr">Mauritania</option><option value="mu">Mauritius</option><option value="yt">Mayotte</option><option value="mx">Mexico</option><option value="fm">Micronesia, Federated States of</option><option value="md">Moldova, Republic of</option><option value="mc">Monaco</option><option value="mn">Mongolia</option><option value="ms">Montserrat</option><option value="ma">Morocco</option><option value="mz">Mozambique</option><option value="mm">Myanmar</option><option value="na">Namibia</option><option value="nr">Nauru</option><option value="np">Nepal</option><option value="nl">Netherlands</option><option value="an">Netherlands Antilles</option><option value="nc">New Caledonia</option><option value="nz">New Zealand</option><option value="ni">Nicaragua</option><option value="ne">Niger</option><option value="ng">Nigeria</option><option value="nu">Niue</option><option value="nf">Norfolk Island</option><option value="mp">Northern Mariana Islands</option><option value="no">Norway</option><option value="om">Oman</option><option value="pk">Pakistan</option><option value="pw">Palau</option><option value="ps">Palestinian Territory, Occupied</option><option value="pa">Panama</option><option value="pg">Papua New Guinea</option><option value="py">Paraguay</option><option value="pe">Peru</option><option value="ph">Philippines</option><option value="pn">Pitcairn</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pr">Puerto Rico</option><option value="qa">Qatar</option><option value="re">Reunion</option><option value="ro">Romania</option><option value="ru">Russian Federation</option><option value="rw">Rwanda</option><option value="sh">Saint Helena</option><option value="kn">Saint Kitts and Nevis</option><option value="lc">Saint Lucia</option><option value="pm">Saint Pierre and Miquelon</option><option value="vc">Saint Vincent and the Grenadines</option><option value="ws">Samoa</option><option value="sm">San Marino</option><option value="st">Sao Tome and Principe</option><option value="sa">Saudi Arabia</option><option value="sn">Senegal</option><option value="cs">Serbia and Montenegro</option><option value="sc">Seychelles</option><option value="sl">Sierra Leone</option><option value="sg">Singapore</option><option value="sk">Slovakia</option><option value="si">Slovenia</option><option value="sb">Solomon Islands</option><option value="so">Somalia</option><option value="za">South Africa</option><option value="gs">South Georgia and the South Sandwich Islands</option><option value="es">Spain</option><option value="lk">Sri Lanka</option><option value="sd">Sudan</option><option value="sr">Suriname</option><option value="sj">Svalbard and Jan Mayen</option><option value="sz">Swaziland</option><option value="se">Sweden</option><option value="ch">Switzerland</option><option value="sy">Syrian Arab Republic</option><option value="tw">Taiwan, Province of China</option><option value="tj">Tajikistan</option><option value="tz">Tanzania, United Republic of</option><option value="th">Thailand</option><option value="tl">Timor-Leste</option><option value="tg">Togo</option><option value="tk">Tokelau</option><option value="to">Tonga</option><option value="tt">Trinidad and Tobago</option><option value="tn">Tunisia</option><option value="tr">Turkey</option><option value="tm">Turkmenistan</option><option value="tc">Turks and Caicos Islands</option><option value="tv">Tuvalu</option><option value="ug">Uganda</option><option value="ua">Ukraine</option><option value="ae">United Arab Emirates</option><option value="uk" selected>United Kingdom</option><option value="us">United States</option><option value="um">United States Minor Outlying Islands</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option><option value="vu">Vanuatu</option><option value="ve">Venezuela</option><option value="vn">Viet Nam</option><option value="vg">Virgin Islands, British</option><option value="vi">Virgin Islands, U.S.</option><option value="wf">Wallis and Futuna</option><option value="eh">Western Sahara</option><option value="ye">Yemen</option><option value="zm">Zambia</option><option value="zw">Zimbabwe</option>          </select>
+        </div>
+
+        <div class="fld">
+          <label for="hl">Language</label>
+          <select id="hl" name="hl">
+            <option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="sm">Amharic</option><option value="ar">Arabic</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bh">Bihari</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en" selected>English</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="fo">Faroese</option><option value="fi">Finnish</option><option value="fr">French</option><option value="fy">Frisian</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ia">Interlingua</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="ko">Korean</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="ml">Malayam</option><option value="mt">Maltese</option><option value="mr">Marathi</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="nn">Norwegian (Nynorsk)</option><option value="oc">Occitan</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt-BR">Portuguese (Brazil)</option><option value="pt-PT">Portuguese (Portugal)</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="gd">Scots Gaelic</option><option value="sr">Serbian</option><option value="si">Sinhalese</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="su">Sudanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tl">Tagalog</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="ti">Tigrinya</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="xh">Xhosa</option>          </select>
+        </div>
+
+        <div class="fld">
+          <label for="depth">Scan depth</label>
+          <select id="depth" name="depth">
+            <option value="1">First page, top 10</option><option value="2" selected>First 2 pages, top 20</option><option value="3">First 3 pages, top 30</option><option value="5">First 5 pages, top 50</option>          </select>
+        </div>
+
+        <div class="fld fld-go">
+          <button type="submit" id="go" class="btn btn-go">
+            <span class="btn-txt">Check ranking</span>
+            <span class="btn-spin" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
+
+      <div class="presets" id="presets">
+        <span>Try one</span>
+        <button type="button" data-k="outsourced accounting services" data-d="acenteus-cca.com">accounting services</button>
+        <button type="button" data-k="seo agency bengaluru" data-d="itzfizz.com">seo agency</button>
+        <button type="button" data-k="lift management software" data-d="aviaenterprises.net">lift software</button>
+      </div>
+
+      <p class="form-note">Five checks a day. Repeat checks are cached and free.</p>
+      <noscript><p class="notice is-warn" style="display:block">The checker needs JavaScript. Everything below works without it.</p></noscript>
+
+      <div class="scanline" id="scanline" aria-hidden="true"></div>
+
+      <div id="result" class="result" hidden aria-live="polite"></div>
+      <div id="summary" class="summary" hidden></div>
+      <ol id="ladder" class="ladder" hidden></ol>
+      <div id="recent" class="recent" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ what it does -->
+<section class="sec" id="does">
+  <div class="shell">
+    <header class="sec-head">
+      <p class="rule">01 / What it does</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">WHAT</span></span> <span class="wd"><span class="ink">IT</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">DOES</span></span></span></h2>      <p class="lede" data-reveal>Three things, done properly.</p>
+    </header>
+    <div class="does-grid" data-wipe>
+            <article class="does">
+        <span class="does-v">FINDS</span>
+        <h3>Your exact position</h3>
+        <p>Scans up to the first 50 organic results in the country and language you pick, and reports the position your domain holds.</p>
+      </article>
+            <article class="does">
+        <span class="does-v">SHOWS</span>
+        <h3>Everyone above you</h3>
+        <p>Returns every competing result with its title and URL, so you can see what Google currently treats as the answer.</p>
+      </article>
+            <article class="does">
+        <span class="does-v">TELLS</span>
+        <h3>The next move</h3>
+        <p>Places your position in a band and gives the single highest return action for that band.</p>
+      </article>
+          </div>
+  </div>
+</section>
+
+<!-- ============================================================ pinned step stack -->
+<section class="pin" id="how">
+  <div class="pin-inner">
+    <div class="shell pin-grid">
+      <div class="pin-copy">
+        <p class="rule">02 / How it works</p>        <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">HOW</span></span> <span class="wd"><span class="ink">IT</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">WORKS</span></span></span></h2>        <p class="lede">Four steps, and the scan stops the moment it finds you.</p>
+        <ol class="pin-nav" id="pin-nav" aria-hidden="true">
+                    <li class="on"><span>01</span>Type the keyword</li>
+                    <li><span>02</span>Add your domain</li>
+                    <li><span>03</span>Pick the market</li>
+                    <li><span>04</span>Read the gap</li>
+                  </ol>
+      </div>
+      <div class="pin-stack" id="pin-stack">
+                <article class="pcard" data-pcard="0">
+          <span class="pcard-n">01</span>
+          <h3>Type the keyword</h3>
+          <p>Use the phrase a customer would actually search, not your product name.</p>
+        </article>
+                <article class="pcard" data-pcard="1">
+          <span class="pcard-n">02</span>
+          <h3>Add your domain</h3>
+          <p>Just the domain. Subdomains count, so blog.yoursite.com matches yoursite.com.</p>
+        </article>
+                <article class="pcard" data-pcard="2">
+          <span class="pcard-n">03</span>
+          <h3>Pick the market</h3>
+          <p>239 countries and 82 interface languages. The search runs from there, not from where you are sitting.</p>
+        </article>
+                <article class="pcard" data-pcard="3">
+          <span class="pcard-n">04</span>
+          <h3>Read the gap</h3>
+          <p>Position, competing results, and the action for your band, in one screen.</p>
+        </article>
+              </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ what you get -->
+<section class="sec" id="result">
+  <div class="shell">
+    <header class="sec-head">
+      <p class="rule">03 / The readout</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">WHAT</span></span> <span class="wd"><span class="ink">YOU</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">GET</span></span> <span class="wd"><span class="ink" data-grad="1">BACK</span></span></span></h2>      <p class="lede" data-reveal>Every check returns the same four things, so two checks a week apart are directly comparable.</p>
+    </header>
+    <ol class="gets">
+            <li data-row><span class="gets-n">01</span><b>Position</b><p>The organic rank your domain holds for that query, in that market.</p></li>
+            <li data-row><span class="gets-n">02</span><b>Ranking URL</b><p>The exact page Google chose, which is often not the one you expected.</p></li>
+            <li data-row><span class="gets-n">03</span><b>The field</b><p>Every result above you, with the competitor appearing most often called out.</p></li>
+            <li data-row><span class="gets-n">04</span><b>The action</b><p>One instruction, matched to your band, from protect it to check indexing first.</p></li>
+          </ol>
+    <p class="upsell" data-reveal>
+      Need this tracked on a schedule, or across a whole site?
+      <button type="button" class="link-btn" data-open-upgrade>See what is coming</button>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ position bands -->
+<section class="sec sec-alt" id="bands">
+  <div class="shell">
+    <header class="sec-head">
+      <p class="rule">04 / Reading the number</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">WHAT</span></span> <span class="wd"><span class="ink">THE</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">NUMBER</span></span> <span class="wd"><span class="ink" data-grad="1">MEANS</span></span></span></h2>      <p class="lede" data-reveal>The same position means four different jobs. This is the one the checker picks for you.</p>
+    </header>
+    <div class="bands" data-wipe>
+            <article class="band">
+        <span class="band-r">1 to 3</span>
+        <h3>Own it</h3>
+        <p>You are the answer for this query. Keep the page current and check whether the AI answer above you cites you or somebody else.</p>
+        <span class="band-bar" aria-hidden="true"><i data-fill="1"></i></span>
+      </article>
+            <article class="band">
+        <span class="band-r">4 to 10</span>
+        <h3>Under the fold</h3>
+        <p>Page one, but below the first screen. The title and the opening answer move this further than more words will.</p>
+        <span class="band-bar" aria-hidden="true"><i data-fill="0.7"></i></span>
+      </article>
+            <article class="band">
+        <span class="band-r">11 to 20</span>
+        <h3>Striking distance</h3>
+        <p>The highest return work on the site. Internal links from your strongest related pages, then close the gaps against the top five.</p>
+        <span class="band-bar" aria-hidden="true"><i data-fill="0.4"></i></span>
+      </article>
+            <article class="band">
+        <span class="band-r">21 plus</span>
+        <h3>Wrong match</h3>
+        <p>Too far back to tune. Work out whether the page and the query are actually matched before touching the copy.</p>
+        <span class="band-bar" aria-hidden="true"><i data-fill="0.18"></i></span>
+      </article>
+          </div>
+  </div>
+</section>
+
+<!-- ============================================================ built for -->
+<section class="sec" id="for">
+  <div class="shell">
+    <header class="sec-head">
+      <p class="rule">05 / Who uses it</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">BUILT</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">FOR</span></span></span></h2>      <p class="lede" data-reveal>Anyone who needs a number they can defend.</p>
+    </header>
+    <div class="for-grid">
+            <article class="forc" data-card>
+        <h3>Founders and D2C brands</h3>
+        <p>Check whether the money keywords actually rank before paying anyone to improve them.</p>
+      </article>
+            <article class="forc" data-card>
+        <h3>Agencies</h3>
+        <p>Pull a defensible baseline position for a pitch or a monthly report in seconds.</p>
+      </article>
+            <article class="forc" data-card>
+        <h3>Freelancers and consultants</h3>
+        <p>Qualify a lead by checking three of their keywords before the call.</p>
+      </article>
+            <article class="forc" data-card>
+        <h3>In house marketers</h3>
+        <p>Track the same query the same way each week and compare like with like.</p>
+      </article>
+          </div>
+  </div>
+</section>
+
+<!-- ============================================================ the data -->
+<section class="sec" id="data">
+  <div class="shell sec-split">
+    <header class="sec-head">
+      <p class="rule">06 / Where the number comes from</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">THE</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">DATA</span></span></span></h2>      <p class="lede" data-reveal>Where the number comes from, said plainly.</p>
+    </header>
+    <div class="copy" data-reveal><p>This checks Google organic results through SerpApi, using the country and language you select. It returns a neutral, unpersonalised position, which is the number worth tracking week to week.</p><p>Your own browser shows something different because it knows your location, your history and your account. A rank checker has none of that, so the same query run twice returns the same answer. That is what makes it a baseline.</p><p>Use it as a baseline and it will serve you well. Semrush states the same thing on their own free checker.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ limits -->
+<section class="sec sec-alt" id="limits">
+  <div class="shell sec-split">
+    <header class="sec-head">
+      <p class="rule">07 / Straight answers</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">WHAT</span></span> <span class="wd"><span class="ink">IT</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">WILL</span></span> <span class="wd"><span class="ink" data-grad="1">NOT</span></span> <span class="wd"><span class="ink" data-grad="1">DO</span></span></span></h2>      <p class="lede" data-reveal>Said before you ask, so the number you take away is the number you can defend.</p>
+    </header>
+    <ol class="gets">
+            <li data-row><span class="gets-n">01</span><b>Track keywords for you</b><p>Every check is run on demand, one keyword at a time. Nothing is scheduled and nothing is stored against an account, because there are no accounts.</p></li>
+            <li data-row><span class="gets-n">02</span><b>Show your personalised result</b><p>It reports the neutral index position for the market you pick. What you see signed in, in your own city, will differ, and that is the point of a baseline.</p></li>
+            <li data-row><span class="gets-n">03</span><b>Measure AI Overview citations</b><p>The check reads organic results only. Whether an answer engine names you is a separate question, and one worth asking separately.</p></li>
+            <li data-row><span class="gets-n">04</span><b>Scan past the first 50</b><p>The scan covers the first 50 organic results at most. Beyond that, position is not the problem worth solving.</p></li>
+          </ol>
+  </div>
+</section>
+
+<!-- ============================================================ ai -->
+<section class="sec sec-ai" id="ai">
+  <div class="shell">
+    <header class="sec-head">
+      <p class="rule">08 / AI Overviews</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">RANK</span></span> <span class="wd"><span class="ink">IS</span></span> <span class="wd"><span class="ink">NOT</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">THE</span></span> <span class="wd"><span class="ink" data-grad="1">WHOLE</span></span> <span class="wd"><span class="ink" data-grad="1">STORY</span></span></span></h2>    </header>
+    <div class="stat-row" data-wipe>
+            <div class="stat">
+        <b data-count="58" data-unit="%">0%</b>
+        <p>lower click through rate for the top ranking page when an AI Overview is present</p>
+        <cite>Ahrefs, 300,000 keywords, December 2025</cite>
+      </div>
+            <div class="stat">
+        <b data-count="17" data-unit="%">0%</b>
+        <p>of AI Overview citations come from the organic top 10, down from 76 percent in mid 2024</p>
+        <cite>BrightEdge, February 2026</cite>
+      </div>
+            <div class="stat">
+        <b data-count="0.61" data-unit="%">0%</b>
+        <p>organic click through on AI Overview queries, against 1.62 percent without one</p>
+        <cite>Seer Interactive, 2.43bn impressions, 2026</cite>
+      </div>
+          </div>
+    <div class="ai-body">
+      <div class="copy" data-reveal><p>Position still decides who gets found. It now decides less about who gets clicked.</p><p>Ahrefs studied 300,000 keywords and measured a 58 percent lower click through rate for the top ranking page when an AI Overview sits above it. Seer Interactive tracked 2.43 billion impressions and found organic click through on those queries running at 0.61 percent, against 1.62 percent without one.</p><p>The number that should change your week is different. BrightEdge found only 17 percent of AI Overview citations now come from pages in the organic top 10, down from 76 percent in mid 2024. Ranking first and being cited first have come apart.</p></div>
+      <p class="callout" data-reveal>Check your position here. Then check whether the answer engines name you, because those are two separate wins.</p>
+      <details class="sources">
+        <summary>Sources</summary>
+        <ul>
+                    <li><a href="https://ahrefs.com/blog/ai-overviews-reduce-clicks-update" rel="noopener nofollow" target="_blank">Ahrefs: AI Overviews reduce clicks, December 2025 update</a></li>
+                    <li><a href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-2026-update" rel="noopener nofollow" target="_blank">Seer Interactive: AI Overview impact on Google CTR, 2026</a></li>
+                    <li><a href="https://searchengineland.com/google-ai-overviews-ctr-recovery-study-475566" rel="noopener nofollow" target="_blank">Search Engine Land: AI Overviews CTR recovery study</a></li>
+                    <li><a href="https://serpapi.com/search-api" rel="noopener nofollow" target="_blank">SerpApi: Google Search API documentation</a></li>
+                  </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ faq -->
+<section class="sec" id="faq">
+  <div class="shell sec-split">
+    <header class="sec-head">
+      <p class="rule">09 / FAQ</p>      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">COMMON</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">QUESTIONS</span></span></span></h2>      <p class="lede" data-reveal>Everything people ask before they trust the number.</p>
+    </header>
+    <div>
+    <div class="faq">
+            <details open data-row>
+        <summary>Is this rank checker really free?</summary>
+        <div class="faq-a"><p>Yes. No signup, no email, no card. Every visitor gets five checks a day, and repeat checks of the same keyword and domain come from cache without using the allowance.</p></div>
+      </details>
+            <details data-row>
+        <summary>How accurate is it?</summary>
+        <div class="faq-a"><p>It returns a neutral, unpersonalised position from a Google search index for the country and language you choose. Run the same check twice and you get the same answer, which is what makes it usable as a baseline you can track.</p></div>
+      </details>
+            <details data-row>
+        <summary>Why might it differ from what I see in Google?</summary>
+        <div class="faq-a"><p>Your own results are shaped by your location, search history and signed in account, and by AI Overviews, map packs and ads pushing organic results down the visible page. The checker has no history, so it reports the underlying organic position.</p></div>
+      </details>
+            <details data-row>
+        <summary>Does it check subdomains?</summary>
+        <div class="faq-a"><p>Yes. It matches on hostname, so blog.yoursite.com counts as a match for yoursite.com, and it reports the exact URL that ranked.</p></div>
+      </details>
+            <details data-row>
+        <summary>Can I check other countries?</summary>
+        <div class="faq-a"><p>Yes, 239 countries and 82 interface languages. This matters most when you sell into a market you are not based in, because the local result set is the only one that counts.</p></div>
+      </details>
+            <details data-row>
+        <summary>How deep does it scan?</summary>
+        <div class="faq-a"><p>Up to the first 50 organic results, your choice of 10, 20, 30 or 50. The scan stops as soon as it finds your domain.</p></div>
+      </details>
+            <details data-row>
+        <summary>How often should I check?</summary>
+        <div class="faq-a"><p>Weekly suits most sites, monthly in slow moving industries. Pick a fixed day and compare like with like, because daily checking mostly measures normal fluctuation.</p></div>
+      </details>
+            <details data-row>
+        <summary>Does ranking first still mean getting the clicks?</summary>
+        <div class="faq-a"><p>Less than it did. Ahrefs measured a 58 percent lower click through rate for the top ranking page when an AI Overview is present. Position one is still the best place to be, it simply earns fewer visits than it did two years ago.</p></div>
+      </details>
+            <details data-row>
+        <summary>Can I use this for client reporting?</summary>
+        <div class="faq-a"><p>Yes, as a baseline, as long as you state where the number came from. It is an index position rather than a client specific personalised result.</p></div>
+      </details>
+            <details data-row>
+        <summary>Do you store my keyword or domain?</summary>
+        <div class="faq-a"><p>The keyword, domain and country are stored so repeat checks can be cached. Your IP address is never stored. A one way keyed hash is used only to count your daily allowance.</p></div>
+      </details>
+          </div>
+    <p class="byline" data-reveal>Built and maintained by the search team at Itzfizz Digital, Bengaluru.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ close -->
+<section class="close" id="close">
+  <div class="shell close-in">
+    <div class="close-copy">
+      <h2 class="stack" data-stack><span class="stack-a"><span class="wd"><span class="ink">NOT</span></span> <span class="wd"><span class="ink">THE</span></span> <span class="wd"><span class="ink">NUMBER</span></span></span> <span class="stack-b"><span class="wd"><span class="ink" data-grad="1">YOU</span></span> <span class="wd"><span class="ink" data-grad="1">WANTED?</span></span></span></h2>      <p data-reveal>Knowing the position is the easy half. Closing the gap against the pages above you is the work, and it is the work Itzfizz Digital does for clients across the United Kingdom and India. Send the keyword and we will tell you what is holding the page back.</p>
+      <div class="close-actions" data-reveal>
+        <a class="btn btn-primary" href="https://itzfizz.com/contact" rel="noopener">
+          <span>Get a free gap review</span>
+          <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M3 10h12M10 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-quiet" href="#keyword">Run another check</a>
+      </div>
+    </div>
+
+    <aside class="close-card" data-reveal>
+      <p class="close-k">Who built this</p>
+      <img src="assets/img/itzfizz-black.png" alt="Itzfizz Digital" width="196" height="64" loading="lazy">
+      <p>Itzfizz Digital is a digital marketing agency in Bengaluru working with clients across the United Kingdom and India, running SEO, generative engine optimisation, content and technical programmes. DoctorFizz is the tooling those programmes run on, and this checker is one piece of it, given away free.</p>
+      <a class="close-link" href="https://itzfizz.com" rel="noopener">
+        See how Itzfizz works        <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M3 10h12M10 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell foot-in">
+    <div>
+      <img class="foot-mark" src="assets/img/doctorfizz-white.png" alt="DoctorFizz" width="164" height="28" loading="lazy">
+      <p class="foot-note">This tool stores a hashed, non identifying key so it can count your daily allowance, and one flag in your browser session so the DoctorFizz notice is only shown once. It does not store your IP address and it sets no advertising cookies.</p>
+      <p class="foot-copy">&copy; 2026 Itzfizz Digital. All rights reserved.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="foot-links">
+        <li><a href="https://itzfizz.com" rel="noopener">Itzfizz Digital</a></li>
+        <li><a href="https://doctorfizz.com" rel="noopener">DoctorFizz</a></li>
+        <li><a href="https://itzfizz.com/contact" rel="noopener">Contact</a></li>
+        <li><a href="https://itzfizz.com/privacy-policy" rel="noopener">Privacy policy</a></li>
+        <li><a href="https://itzfizz.com/terms-of-service" rel="noopener">Terms of service</a></li>
+      </ul>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/company/itzfizzz/" rel="noopener" aria-label="Itzfizz Digital on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.4 8.75 21 11 21 14.1V21h-4v-6.1c0-1.46-.03-3.35-2.05-3.35-2.05 0-2.37 1.6-2.37 3.25V21H9z"/></svg></a></li>
+        <li><a href="https://www.instagram.com/itzfizz_digital/" rel="noopener" aria-label="Itzfizz Digital on Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.76 6.76 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.94-11.4a1.58 1.58 0 1 1-1.58-1.57 1.58 1.58 0 0 1 1.58 1.57z"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@itzfizz_digital" rel="noopener" aria-label="Itzfizz Digital on YouTube"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 12s0-3.2-.41-4.74a2.5 2.5 0 0 0-1.76-1.77C19.29 5.08 12 5.08 12 5.08s-7.29 0-8.83.41A2.5 2.5 0 0 0 1.41 7.26 26 26 0 0 0 1 12a26 26 0 0 0 .41 4.74 2.5 2.5 0 0 0 1.76 1.77c1.54.41 8.83.41 8.83.41s7.29 0 8.83-.41a2.5 2.5 0 0 0 1.76-1.77C23 15.2 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/itzfizz.digital" rel="noopener" aria-label="Itzfizz Digital on Facebook"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============================================================ upgrade modal -->
+<div class="modal" id="upgrade" hidden role="dialog" aria-modal="true" aria-labelledby="up-title">
+  <div class="modal-back" data-close-upgrade></div>
+  <div class="modal-card" role="document">
+    <button type="button" class="modal-x" data-close-upgrade aria-label="Close">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <p class="modal-k">DoctorFizz</p>
+    <h2 id="up-title">Checking more than one keyword?</h2>
+    <p class="modal-body">This page checks one keyword at a time, on demand. DoctorFizz is the platform the same team is building around it, currently in private beta. Join the beta list to hear when it opens.</p>
+    <a class="btn btn-primary" href="https://doctorfizz.com" rel="noopener" target="_blank">
+      <span>Join the DoctorFizz beta</span>
+      <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M3 10h12M10 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="modal-note">Opens doctorfizz.com in a new tab. Close this and it will not ask again.</p>
+  </div>
+</div>
+
+<script src="assets/js/app.r12.js?v=r12-serpapi" data-df-base="/" data-df-rel="r12" defer></script>
+</body>
+</html>
