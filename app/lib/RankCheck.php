@@ -131,12 +131,33 @@ final class RankCheck
         return $host;
     }
 
+    private static function providerMode(): string
+    {
+        $mode = strtolower(
+            trim(
+                (string) App::config(
+                    'rank_provider_mode',
+                    'hybrid'
+                )
+            )
+        );
+
+        return in_array(
+            $mode,
+            ['hybrid', 'vps_only'],
+            true
+        )
+            ? $mode
+            : 'hybrid';
+    }
+
     public static function cacheKey(array $d): string
     {
         return hash(
             'sha256',
             implode('|', [
-                'hybrid-v2',
+                'rank-v3',
+                self::providerMode(),
                 $d['keyword'],
                 $d['domain'],
                 $d['gl'],
@@ -255,7 +276,26 @@ final class RankCheck
      * If worker fails, times out or Google blocks it,
      * return null so SerpApi automatically becomes fallback.
      */
-    private static function tryVpsWorker(array $d): ?array
+    private static function workerFailure(
+        string $error,
+        string $code,
+        int $status = 0
+    ): array {
+        return [
+            'ok' => false,
+            'error' => $error,
+            'results' => [],
+            'position' => null,
+            'found' => false,
+            'scanned' => 0,
+            'api_calls' => 0,
+            'provider' => 'vps_playwright',
+            'worker_code' => $code,
+            'worker_status' => $status,
+        ];
+    }
+
+    private static function tryVpsWorker(array $d): array
     {
         $base = rtrim(
             trim(
@@ -274,12 +314,18 @@ final class RankCheck
             )
         );
 
-        if (
-            $base === '' ||
-            $secret === '' ||
-            !function_exists('curl_init')
-        ) {
-            return null;
+        if ($base === '' || $secret === '') {
+            return self::workerFailure(
+                'The VPS rank worker is not configured.',
+                'worker_not_configured'
+            );
+        }
+
+        if (!function_exists('curl_init')) {
+            return self::workerFailure(
+                'The server cannot contact the VPS worker because cURL is unavailable.',
+                'curl_unavailable'
+            );
         }
 
         $payload = json_encode(
@@ -294,7 +340,10 @@ final class RankCheck
         );
 
         if (!is_string($payload)) {
-            return null;
+            return self::workerFailure(
+                'The VPS worker request could not be prepared.',
+                'worker_payload_error'
+            );
         }
 
         $ch = curl_init(
@@ -305,27 +354,13 @@ final class RankCheck
             $ch,
             [
                 CURLOPT_POST => true,
-
-                CURLOPT_POSTFIELDS =>
-                    $payload,
-
-                CURLOPT_RETURNTRANSFER =>
-                    true,
-
-                CURLOPT_CONNECTTIMEOUT =>
-                    5,
-
-                CURLOPT_TIMEOUT =>
-                    20,
-
-                CURLOPT_FOLLOWLOCATION =>
-                    false,
-
-                CURLOPT_SSL_VERIFYPEER =>
-                    true,
-
-                CURLOPT_SSL_VERIFYHOST =>
-                    2,
+                CURLOPT_POSTFIELDS => $payload,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_CONNECTTIMEOUT => 5,
+                CURLOPT_TIMEOUT => 20,
+                CURLOPT_FOLLOWLOCATION => false,
+                CURLOPT_SSL_VERIFYPEER => true,
+                CURLOPT_SSL_VERIFYHOST => 2,
 
                 CURLOPT_HTTPHEADER => [
                     'Accept: application/json',
@@ -334,7 +369,7 @@ final class RankCheck
                 ],
 
                 CURLOPT_USERAGENT =>
-                    'DoctorFizz-RankChecker/2.0',
+                    'DoctorFizz-RankChecker/3.0',
             ]
         );
 
@@ -345,24 +380,18 @@ final class RankCheck
             CURLINFO_HTTP_CODE
         );
 
+        $curlError = curl_error($ch);
+
         curl_close($ch);
 
-        /*
-         * Worker unavailable,
-         * Cloudflare tunnel unavailable,
-         * proxy timeout,
-         * Google block,
-         * etc.
-         *
-         * Existing SerpApi flow below
-         * will automatically take over.
-         */
-        if (
-            $body === false ||
-            $status < 200 ||
-            $status >= 300
-        ) {
-            return null;
+        if ($body === false) {
+            return self::workerFailure(
+                $curlError !== ''
+                    ? 'VPS worker connection failed: ' . $curlError
+                    : 'The VPS worker could not be reached.',
+                'worker_transport_error',
+                $status
+            );
         }
 
         $data = json_decode(
@@ -370,11 +399,49 @@ final class RankCheck
             true
         );
 
-        if (
-            !is_array($data) ||
-            empty($data['ok'])
-        ) {
-            return null;
+        /*
+         * Preserve VPS worker errors such as google_blocked,
+         * serp_unreadable or proxy failures so vps_only mode
+         * can show the real reason instead of silently falling back.
+         */
+        if ($status < 200 || $status >= 300) {
+            $workerCode =
+                is_array($data) &&
+                isset($data['code'])
+                    ? (string) $data['code']
+                    : 'worker_http_error';
+
+            $workerError =
+                is_array($data) &&
+                !empty($data['error'])
+                    ? (string) $data['error']
+                    : 'The VPS worker returned HTTP ' . $status . '.';
+
+            return self::workerFailure(
+                $workerError,
+                $workerCode,
+                $status
+            );
+        }
+
+        if (!is_array($data)) {
+            return self::workerFailure(
+                'The VPS worker returned an unreadable response.',
+                'worker_unreadable_response',
+                $status
+            );
+        }
+
+        if (empty($data['ok'])) {
+            return self::workerFailure(
+                !empty($data['error'])
+                    ? (string) $data['error']
+                    : 'The VPS worker could not complete the rank check.',
+                isset($data['code'])
+                    ? (string) $data['code']
+                    : 'worker_failed',
+                $status
+            );
         }
 
         $results = [];
@@ -425,17 +492,10 @@ final class RankCheck
 
         return [
             'ok' => true,
-
             'error' => '',
-
-            'results' =>
-                $results,
-
-            'position' =>
-                $position,
-
-            'found' =>
-                !empty($data['found']),
+            'results' => $results,
+            'position' => $position,
+            'found' => !empty($data['found']),
 
             'scanned' => max(
                 count($results),
@@ -444,14 +504,10 @@ final class RankCheck
                 )
             ),
 
-            /*
-             * VPS call does not consume
-             * SerpApi budget.
-             */
             'api_calls' => 0,
-
-            'provider' =>
-                'vps_playwright',
+            'provider' => 'vps_playwright',
+            'worker_code' => 'ok',
+            'worker_status' => $status,
         ];
     }
 
@@ -472,12 +528,33 @@ final class RankCheck
          * → DataImpulse
          * → Google
          */
+        $mode =
+            self::providerMode();
+
         $workerResult =
             self::tryVpsWorker($d);
 
-        if ($workerResult !== null) {
+        /*
+         * VPS succeeded:
+         * use it in both hybrid and vps_only mode.
+         */
+        if ($workerResult['ok']) {
             return $workerResult;
         }
+
+        /*
+         * VPS-only diagnostic mode:
+         * never touch SerpApi.
+         */
+        if ($mode === 'vps_only') {
+            return $workerResult;
+        }
+
+        /*
+         * Hybrid mode:
+         * VPS failed, so continue into the existing
+         * SerpApi fallback code below.
+         */
 
         /*
          * FALLBACK
