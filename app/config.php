@@ -39,6 +39,26 @@ return [
         getenv('RANK_WORKER_SECRET') ?: ''
     ),
 
+    /*
+     * Rank provider mode:
+     *
+     * hybrid
+     *   VPS first, then SerpApi fallback
+     *
+     * vps_only
+     *   VPS only, no SerpApi fallback
+     *
+     * Default remains hybrid so current live
+     * functionality is not affected.
+     */
+    'rank_provider_mode' => strtolower(
+        trim(
+            (string) (
+                getenv('RANK_PROVIDER_MODE') ?: 'hybrid'
+            )
+        )
+    ),
+
     'admin_bootstrap' => [
         'username'  => 'admin',
         'pass_hash' => '',
@@ -46,7 +66,7 @@ return [
 
     /*
      * Fallback provider.
-     * Do NOT remove SerpApi yet.
+     * Keep SerpApi configured while hybrid mode is available.
      */
     'providers' => [
         'serpapi' => [
