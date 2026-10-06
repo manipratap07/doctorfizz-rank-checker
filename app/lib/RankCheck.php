@@ -136,7 +136,7 @@ final class RankCheck
         return hash(
             'sha256',
             implode('|', [
-                'hybrid-v1',
+                'hybrid-v2',
                 $d['keyword'],
                 $d['domain'],
                 $d['gl'],
@@ -499,7 +499,7 @@ final class RankCheck
         ) {
             if ($apiCalls >= $budgetLeft) {
                 $error =
-                    'The daily search allowance for this tool ran out mid check. The results below are partial.';
+                    'The full requested search range could not be checked because the daily provider allowance was reached.';
 
                 break;
             }
@@ -605,11 +605,30 @@ final class RankCheck
             }
         }
 
+        /*
+         * Never return an incomplete SerpApi scan as a successful
+         * "not ranked" result. If a requested page failed or the
+         * provider budget ran out mid-check, surface an upstream
+         * failure instead of misleading the user.
+         */
+        if ($error !== '') {
+            return [
+                'ok' => false,
+                'error' => $error,
+                'results' => [],
+                'position' => null,
+                'found' => false,
+                'scanned' => 0,
+                'api_calls' => $apiCalls,
+                'provider' => $provider->name(),
+            ];
+        }
+
         return [
             'ok' => true,
 
             'error' =>
-                $error,
+                '',
 
             'results' =>
                 $results,
