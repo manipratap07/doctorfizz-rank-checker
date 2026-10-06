@@ -221,11 +221,20 @@ if ($action === 'health') {
         $checks['vps_worker_configured'] ||
         $checks['serpapi_fallback_configured'];
 
+    $criticalChecks = $checks;
+
+    /*
+     * Vercel deployment files are read-only.
+     * page_writable is informational only and is not required
+     * for the public rank checker to operate.
+     */
+    unset($criticalChecks['page_writable']);
+
     json_out([
         'ok' =>
             !in_array(
                 false,
-                $checks,
+                $criticalChecks,
                 true
             ),
 
