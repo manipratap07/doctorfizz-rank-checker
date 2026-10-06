@@ -26,14 +26,33 @@ return [
 
     'ip_pepper' => (string) (getenv('IP_PEPPER') ?: ''),
 
+    /*
+     * Primary rank provider:
+     * VPS → Playwright → DataImpulse → Google
+     */
+    'rank_worker_url' => rtrim(
+        (string) (getenv('RANK_WORKER_URL') ?: ''),
+        '/'
+    ),
+
+    'rank_worker_secret' => (string) (
+        getenv('RANK_WORKER_SECRET') ?: ''
+    ),
+
     'admin_bootstrap' => [
         'username'  => 'admin',
         'pass_hash' => '',
     ],
 
+    /*
+     * Fallback provider.
+     * Do NOT remove SerpApi yet.
+     */
     'providers' => [
         'serpapi' => [
-            'api_key' => (string) (getenv('SERPAPI_KEY') ?: ''),
+            'api_key' => (string) (
+                getenv('SERPAPI_KEY') ?: ''
+            ),
         ],
     ],
 
