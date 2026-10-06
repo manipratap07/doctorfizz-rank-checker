@@ -95,6 +95,25 @@ if ($action === '') {
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
+$rankProviderMode = strtolower(
+    trim(
+        (string) App::config(
+            'rank_provider_mode',
+            'hybrid'
+        )
+    )
+);
+
+if (
+    !in_array(
+        $rankProviderMode,
+        ['hybrid', 'vps_only'],
+        true
+    )
+) {
+    $rankProviderMode = 'hybrid';
+}
+
 /* -------------------------------------------------------------
  * Session
  * ------------------------------------------------------------- */
@@ -237,6 +256,9 @@ if ($action === 'health') {
                 $criticalChecks,
                 true
             ),
+
+        'provider_mode' =>
+            $rankProviderMode,
 
         'checks' =>
             $checks,
@@ -512,21 +534,47 @@ if (!$result['ok']) {
      * Failed searches also do not consume
      * the visitor's daily allowance.
      */
-    json_out([
-        'ok' =>
-            false,
+    $failurePayload = [
+        'ok' => false,
 
-        'code' =>
-            'provider',
+        'code' => 'provider',
 
         'error' =>
             $result['error'],
+
+        'provider' =>
+            (string) (
+                $result['provider'] ??
+                $provider->name()
+            ),
+
+        'provider_mode' =>
+            $rankProviderMode,
 
         'remaining' =>
             RateLimiter::remaining(
                 $visitor
             ),
-    ], 502);
+    ];
+
+    /*
+     * VPS-only diagnostic fields.
+     * No credentials or secrets are exposed.
+     */
+    if (isset($result['worker_code'])) {
+        $failurePayload['worker_code'] =
+            (string) $result['worker_code'];
+    }
+
+    if (isset($result['worker_status'])) {
+        $failurePayload['worker_status'] =
+            (int) $result['worker_status'];
+    }
+
+    json_out(
+        $failurePayload,
+        502
+    );
 }
 
 /* -------------------------------------------------------------
@@ -663,6 +711,9 @@ $payload = [
      */
     'provider' =>
         $actualProvider,
+
+    'provider_mode' =>
+        $rankProviderMode,
 
     'checked_at' =>
         time(),
